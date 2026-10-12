@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Nitesh Prabhakar, senior QA engineer with 7+ years in manual testing, security testing, API testing and test automation. Based in New Delhi, India.">
+<meta property="og:title" content="Nitesh Prabhakar | QA Engineer">
+<meta property="og:description" content="Manual, security and automation testing across legal-tech, OTT and fintech products.">
+<meta property="og:type" content="website">
+<title>Nitesh Prabhakar | QA Engineer</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one left-aligned column; sections read like pages of a test report, with a bug-report card as the signature element */
+:root{
+  --bg:#f3f5f8; --surface:#ffffff; --fg:#161c27; --muted:#556073; --line:#d8dee8;
+  --accent:#1f4fd8; --accent-soft:#e4ebff; --sev:#c4321f; --sev-soft:#fbe7e3; --ok:#1d7a4d; --ok-soft:#e1f3ea;
+  --display:'Familjen Grotesk',system-ui,sans-serif; --body:'IBM Plex Sans',system-ui,sans-serif; --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f141c; --surface:#171e29; --fg:#e8ecf3; --muted:#9aa6b8; --line:#2a3342;
+  --accent:#7ea0ff; --accent-soft:#1d2a4d; --sev:#ff8a77; --sev-soft:#3a1f1b; --ok:#6fd1a0; --ok-soft:#173326; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f141c; --surface:#171e29; --fg:#e8ecf3; --muted:#9aa6b8; --line:#2a3342;
+  --accent:#7ea0ff; --accent-soft:#1d2a4d; --sev:#ff8a77; --sev-soft:#3a1f1b; --ok:#6fd1a0; --ok-soft:#173326; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:16px/1.6 var(--body);padding-inline:20px}
+.wrap{max-width:980px;margin:0 auto;padding-block:32px 64px;display:flex;flex-direction:column;gap:72px}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0;text-wrap:balance}
+h2{font-size:clamp(1.6rem,4vw,2.1rem);letter-spacing:-.01em}
+.label{font:500 .75rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+nav{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;justify-content:space-between}
+nav .links{display:flex;flex-wrap:wrap;gap:6px 18px;font:500 .85rem var(--mono)}
+nav .links a{color:var(--muted);text-decoration:none}
+nav .links a:hover{color:var(--accent)}
+nav b{font:700 1.05rem var(--display)}
+#theme{font:500 .8rem var(--mono);background:none;color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:6px 10px;cursor:pointer}
+.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:40px;align-items:start}
+.hero h1{font-size:clamp(2.4rem,7vw,4.2rem);letter-spacing:-.025em;margin-block:14px 16px}
+.hero p.lead{font-size:1.125rem;color:var(--muted);max-width:52ch;margin:0 0 24px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:500 .78rem var(--mono);padding:5px 10px;border-radius:4px;background:var(--accent-soft);color:var(--accent)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;align-items:center}
+.btn{font:600 .95rem var(--body);padding:11px 18px;border-radius:6px;border:1px solid var(--accent);background:var(--accent);color:var(--bg);cursor:pointer;text-decoration:none}
+.btn.ghost{background:none;color:var(--accent)}
+.contact{font:.9rem var(--mono);color:var(--muted);display:flex;flex-direction:column;gap:2px}
+.contact span{user-select:all}
+/* bug card */
+.bug{background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden;min-width:0}
+.bug header{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:12px 16px;border-bottom:1px solid var(--line);font:500 .78rem var(--mono);color:var(--muted)}
+.sev{background:var(--sev-soft);color:var(--sev);padding:2px 8px;border-radius:4px;font-weight:500}
+.ok{background:var(--ok-soft);color:var(--ok);padding:2px 8px;border-radius:4px}
+.bug .body{padding:16px;display:flex;flex-direction:column;gap:12px}
+.bug h3{font-size:1.2rem}
+.bug dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:.9rem}
+.bug dt{font:500 .75rem var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.08em;padding-top:3px}
+.bug dd{margin:0;min-width:0}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-block:1px solid var(--line)}
+.facts div{padding:18px 16px 18px 0;display:flex;flex-direction:column;gap:4px}
+.facts div+div{padding-left:16px;border-left:1px solid var(--line)}
+.facts b{font:700 2rem var(--display);font-variant-numeric:tabular-nums}
+.facts span{font-size:.85rem;color:var(--muted)}
+section{display:flex;flex-direction:column;gap:24px}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px}
+.two p{margin:0;color:var(--muted)}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.skill{border-top:2px solid var(--fg);padding-top:12px;display:flex;flex-direction:column;gap:10px}
+.skill h3{font-size:1.05rem}
+.skill ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.skill li{font:.82rem var(--mono);border:1px solid var(--line);border-radius:4px;padding:3px 8px;background:var(--surface)}
+.job{display:grid;grid-template-columns:200px minmax(0,1fr);gap:8px 32px;padding-block:24px;border-top:1px solid var(--line)}
+.job .when{font:.82rem var(--mono);color:var(--muted)}
+.job h3{font-size:1.2rem;margin-bottom:2px}
+.job .org{color:var(--muted);margin-bottom:10px}
+.job ul,.proj ul,.plain{margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:6px}
+.projs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.proj{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:20px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.proj h3{font-size:1.1rem}.proj p{margin:0;color:var(--muted);font-size:.92rem}
+.proj ul{font-size:.92rem}
+.proj.main{grid-column:1/-1}
+footer{border-top:1px solid var(--line);padding-top:24px;display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between;color:var(--muted);font-size:.9rem}
+@media (max-width:760px){
+  .hero,.two,.job{grid-template-columns:minmax(0,1fr)}
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .facts div:nth-child(3){padding-left:0;border-left:0}
+  .facts div:nth-child(n+3){border-top:1px solid var(--line)}
+  .wrap{gap:56px}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav>
+    <b>Nitesh Prabhakar</b>
+    <div class="links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div>
+    <button id="theme" type="button" aria-label="Switch light or dark theme">Theme</button>
+  </nav>
+
+  <div class="hero">
+    <div>
+      <span class="label">QA Engineer · New Delhi, India</span>
+      <h1>I find the bugs before your users do.</h1>
+      <p class="lead">Senior QA engineer with 7+ years of manual and functional testing across legal-tech, OTT streaming and banking products. I test on web, Android, iOS and smart TVs, and I write bug reports developers can act on the same day. I also automate repeat checks with Playwright and Appium, so releases get tested the same way every time.</p>
+      <div class="chips"><span class="chip">Manual testing</span><span class="chip">Test automation</span><span class="chip">Security testing</span><span class="chip">API testing</span><span class="chip">Mobile and TV</span></div>
+      <div class="cta">
+        <a class="btn" href="#contact">Get in touch</a>
+        <a class="btn ghost" href="#projects">See my work</a>
+      </div>
+    </div>
+
+    <article class="bug" aria-label="Example of a bug report format">
+      <header><span>BUG-0142 · Registration</span><span class="sev">URGENT</span></header>
+      <div class="body">
+        <h3>JWT token readable in the page DOM</h3>
+        <dl>
+          <dt>Found in</dt><dd>QA build, bound for production</dd>
+          <dt>Risk</dt><dd>Session hijacking if the token is read by a script or extension</dd>
+          <dt>Evidence</dt><dd>Screenshot, screen recording, console log</dd>
+          <dt>Status</dt><dd><span class="ok">Fixed before go-live</span></dd>
+        </dl>
+        <span class="label">How I write every report</span>
+      </div>
+    </article>
+  </div>
+
+  <div class="facts" aria-label="Highlights">
+    <div><b>7+</b><span>years in software QA</span></div>
+    <div><b>50+</b><span>bugs reported on one onboarding module</span></div>
+    <div><b>2</b><span>urgent security issues caught before release</span></div>
+    <div><b>5</b><span>device types: Android, iOS, Android TV, iOS TV, Roku</span></div>
+  </div>
+
+  <section id="about">
+    <span class="label">About</span>
+    <h2>Careful testing, clear communication</h2>
+    <div class="two">
+      <p>I test the way a real user behaves and the way an attacker would. That means checking happy paths, odd inputs, expired sessions and broken connections, then writing up each problem with exact steps, severity and evidence.</p>
+      <p>I work in Agile teams, plan test coverage from requirements, run regression and smoke suites before each release, and mentor junior testers. Over the past year I have moved a growing share of regression into automation: Playwright scripts in Java and JavaScript for web, and Appium for Android and iOS, with API and UI checks running in GitHub Actions.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <span class="label">Skills</span>
+    <h2>What I test with</h2>
+    <div class="skills">
+      <div class="skill"><h3>Manual and functional</h3><ul><li>Test case design</li><li>Regression</li><li>Smoke and sanity</li><li>Integration</li><li>RTM</li><li>STLC and SDLC</li></ul></div>
+      <div class="skill"><h3>Security checks</h3><ul><li>JWT and session validation</li><li>XSS</li><li>NoSQL injection</li><li>Unicode homoglyphs</li><li>Expired token reuse</li></ul></div>
+      <div class="skill"><h3>Test automation</h3><ul><li>Playwright (Java)</li><li>Playwright (JavaScript)</li><li>Appium (Android)</li><li>Appium (iOS)</li><li>Selenium</li><li>GitHub Actions</li><li>Git and GitHub</li></ul></div>
+      <div class="skill"><h3>API, data and load</h3><ul><li>Postman</li><li>Swagger</li><li>REST auth flows</li><li>SQL validation</li><li>Apache JMeter</li><li>k6</li></ul></div>
+      <div class="skill"><h3>Mobile and TV</h3><ul><li>Android</li><li>iOS</li><li>Android TV</li><li>iOS TV</li><li>Roku TV</li></ul></div>
+      <div class="skill"><h3>Bug tracking</h3><ul><li>JIRA</li><li>Linear</li><li>Redmine</li><li>Bitbucket</li></ul></div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <span class="label">Experience</span>
+    <h2>Where I have worked</h2>
+    <div>
+      <div class="job">
+        <div class="when">Jul 2021 – Present</div>
+        <div><h3>QA Engineer</h3><div class="org">GRK Info Service Pvt. Ltd., New Delhi</div>
+          <ul>
+            <li>Lead QA for several concurrent releases across legal-tech, fintech and SaaS products in Agile sprints.</li>
+            <li>Design and maintain functional, regression, smoke and sanity suites for web and mobile apps.</li>
+            <li>Built and maintain Playwright scripts in Java and JavaScript, which cut manual regression effort by making test runs repeatable.</li>
+            <li>Automated key end-to-end flows on Android and iOS with Appium, including the LAWCLERK Remote Associate registration and profile builder.</li>
+            <li>Found critical security issues, including JWT exposure in the DOM and XSS input accepted on a QA build.</li>
+            <li>Raised 50+ detailed bugs with steps, severity and evidence (screenshots, videos, console logs).</li>
+            <li>Tested REST APIs in Postman and Swagger, and ran JMeter load checks to find bottlenecks before release.</li>
+            <li>Mentor junior QA engineers and run internal knowledge-sharing sessions.</li>
+          </ul></div>
+      </div>
+      <div class="job">
+        <div class="when">Nov 2020 – Jun 2021</div>
+        <div><h3>QA Engineer</h3><div class="org">A2Star Technologies / Mobiotics Solutions, Bangalore</div>
+          <ul>
+            <li>Tested OTT streaming platforms (DocuBay, vLive) on web, mobile and smart TV.</li>
+            <li>Validated multi-bitrate video quality on Android TV, iOS TV and Roku TV.</li>
+            <li>Triaged and prioritised defects with developers and product managers for sprint releases.</li>
+          </ul></div>
+      </div>
+      <div class="job">
+        <div class="when">Jan 2018 – Oct 2020</div>
+        <div><h3>Software Test Engineer</h3><div class="org">A2Star Technologies, client BSG Technology, Mumbai</div>
+          <ul>
+            <li>Manual testing, SQL data validation, API checks and performance testing on banking and e-commerce apps.</li>
+            <li>Wrote test cases, test plans and defect reports in Redmine and JIRA.</li>
+            <li>Worked through the full STLC, from requirement analysis to sign-off reporting.</li>
+          </ul></div>
+      </div>
+      <div class="job">
+        <div class="when">Jan 2017 – Dec 2017</div>
+        <div><h3>Operations Representative</h3><div class="org">Concentrix Daksh Services India Pvt. Ltd.</div>
+          <ul><li>Handled customer operations and escalations, which built my communication and process discipline.</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <span class="label">Projects</span>
+    <h2>Products I have tested</h2>
+    <div class="projs">
+      <article class="proj main">
+        <span class="label">Legal technology</span>
+        <h3>LAWCLERK</h3>
+        <p>A legal marketplace that connects law firms with freelance attorneys and Remote Associates for document drafting, review, motions and discovery.</p>
+        <ul>
+          <li>Led QA for Remote Associate registration and onboarding: signup, OTP, identity verification, profile builder and Salesforce sync.</li>
+          <li>Reported 50+ bugs across functional, UI, security, backend and PRD compliance, including 2 urgent security issues.</li>
+          <li>Found NoSQL injection and Unicode homoglyph inputs that caused 500 errors on the registration endpoint.</li>
+          <li>Found expired token reuse and session fixation risks during token and session checks.</li>
+          <li>Checked Salesforce sync for attorney acceptance, BAR license progress, payment status and dual accounts.</li>
+          <li>Tested on Android and iOS devices and automated registration and profile completion with Appium to confirm the same behaviour on both.</li>
+        </ul>
+      </article>
+      <article class="proj"><span class="label">OTT media</span><h3>DocuBay</h3>
+        <p>Streaming platform for documentaries.</p>
+        <ul><li>Functional, regression and release testing on web and mobile.</li><li>Checked content delivery, subscription flows and playback quality.</li><li>Gave sign-off and smoke validation for production releases.</li></ul></article>
+      <article class="proj"><span class="label">OTT streaming</span><h3>vLive</h3>
+        <p>Multi-bitrate live and on-demand video.</p>
+        <ul><li>Tested on web, mobile, tablet, Android TV, iOS TV and Roku TV.</li><li>Ran functional, integration, regression and API checks.</li></ul></article>
+      <article class="proj"><span class="label">Banking and e-commerce</span><h3>Defect Pace and Sales Propeller</h3>
+        <p>Transaction-heavy business applications.</p>
+        <ul><li>Manual testing, SQL data validation, API checks and JMeter load runs.</li><li>Documented defects in transaction flows, form validation and database integrity.</li></ul></article>
+    </div>
+  </section>
+
+  <section>
+    <span class="label">Credentials</span>
+    <h2>Certifications</h2>
+    <div>
+      <div>
+        <ul class="plain"><li>SelectorsHub Certification Program, 2026</li><li>Page Load Timer Certification, SelectorsHub, 2026</li><li>Effective Leadership, HP LIFE, 2022</li><li>Business Communications, HP LIFE, 2022</li><li>Business Email, HP LIFE, 2022</li><li>Effective Presentations, HP LIFE, 2022</li></ul></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <span class="label">Contact</span>
+    <h2>Looking for a tester who reads the spec and the edge cases?</h2>
+    <div class="cta" style="margin-top:0">
+      <div class="contact"><span>niteshsinha055@gmail.com</span><span>New Delhi, India</span></div>
+      <button class="btn" id="copy" type="button">Copy email</button>
+      <a class="btn ghost" href="https://www.linkedin.com/in/nitesh-prabhakar-92041a24a" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn ghost" href="https://github.com/niteshsinha055-create" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </section>
+
+  <footer><span>Nitesh Prabhakar · QA Engineer · <a href="https://www.linkedin.com/in/nitesh-prabhakar-92041a24a" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/niteshsinha055-create" target="_blank" rel="noopener">GitHub</a></span><span>Open to manual and functional testing roles</span></footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement,btn=document.getElementById('theme');
+  try{var t=localStorage.getItem('theme');if(t)root.setAttribute('data-theme',t)}catch(e){}
+  btn.addEventListener('click',function(){
+    var dark=root.getAttribute('data-theme')==='dark'||(!root.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme: dark)').matches);
+    var n=dark?'light':'dark';root.setAttribute('data-theme',n);
+    try{localStorage.setItem('theme',n)}catch(e){}
+  });
+  var c=document.getElementById('copy');
+  c.addEventListener('click',function(){
+    var done=function(){c.textContent='Copied';setTimeout(function(){c.textContent='Copy email'},1800)};
+    try{navigator.clipboard.writeText('niteshsinha055@gmail.com').then(done,function(){c.textContent='Select the email above'})}catch(e){c.textContent='Select the email above'}
+  });
+})();
+</script>
+
+</body>
+</html>
